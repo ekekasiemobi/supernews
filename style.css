@@ -1,0 +1,26 @@
+nav{
+    background-color: crimson;
+}
+
+ul{
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    float: left;
+}
+
+li a{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 14px 32px;
+    color: white;
+}
+
+li a:hover{
+    color: darkgrey;
+}
