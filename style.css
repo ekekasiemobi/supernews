@@ -1,3 +1,7 @@
+/* body{
+    
+} */
+
 nav{
     background-color: crimson;
 }
@@ -24,3 +28,28 @@ li a{
 li a:hover{
     color: darkgrey;
 }
+
+.container{
+    display: flex;
+    margin:3% 3%;
+    flex-wrap: wrap;
+}
+
+.big{
+    background-color: aqua;
+    width: 50%;
+    height: 400px;
+}
+
+.small1{
+    background-color: brown;
+    width: 25%;
+    height: 200px;
+}
+.small2{
+    background-color:chocolate;
+    width: 25%;
+    height: 200px;
+}
+
+
