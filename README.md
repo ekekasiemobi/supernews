@@ -1,0 +1,2 @@
+# supernews
+A new website
