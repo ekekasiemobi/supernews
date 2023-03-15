@@ -9,41 +9,134 @@
 </head>
 <body>
     <!-- the nav section -->
-    <section>
-        <nav>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Services</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href="">Login</a></li>
-            </ul>
-        </nav>
-    </section>
+    <nav>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Login</a></li>
+        </ul>
+    </nav><br><br>
 
     <!-- The Hero section -->
 
-    <section>
-        <div class="container">
-            <div style="position:relative" class="big">
-                <img style="height:400px;position: absolute;" src="img/lawyers-in-conference-room_1889707.jpg" alt="">
-                <h3 style="position:absolute; margin-bottom: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse magnam magni ratione recusandae, debitis dolorem!</h3>
+    <section id=" data">
+        <div  class="image-grid">
+            <div style="position:relative" class="image-grid-col-2 image-grid-row-2" >
+                <img style="height:420px; width: 100%; position: absolute;" src="img/lawyers-in-conference-room_1889707.jpg" alt="">
+                <div style="position:absolute; padding: 220px 50px 0px 50px">
+                    <h3>FASHION</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse magnam magni ratione recusandae, debitis dolorem!</p>
+                    <p>Admin - August 25th 2023</p>
+                </div>
+                
             </div>
-            <div class="small1">
-                <img src="img/family.jpg" alt="">
+            <div>
+                <img style="width:100%;height:200px" src="img/family.jpg" alt="">
             </div>
-            <div class="small2">
-                <img src="img/T-301768f55a912aaf90dd979ebb518292-arch-pixel-size-1-(97).png" alt="">
+            <div>
+                <img style="width:100%;height:200px" src="img/T-301768f55a912aaf90dd979ebb518292-arch-pixel-size-1-(97).png" alt="">
             </div>
-            <div class="small1">
-                <img src="img/how-to-make-your-husband-happy.jpg" alt="">
+            <div>
+                <img style="width:100%;height:200px" src="img/how-to-make-your-husband-happy.jpg" alt="">
             </div>
-            <div class="small2">
-                <img src="img/Getting-Divorced-When-One-Spouse-Doesn’t-Want-to-Split-Up.jpeg" alt="">
+            <div>
+                <img style="width:100%;height:200px" src="img/Getting-Divorced-When-One-Spouse-Doesn’t-Want-to-Split-Up.jpeg" alt="">
             </div>
-        </div>
-    </section>
+        </div><br><br><br><br>
 
+        <div>
+            <div class="image-grid">
+                <div class="box">
+                    <img style="height:250px; " src="img/chicago_skyline_night-wallpaper-1280x1024.jpg" alt="">
+                </div>
+                <div class="box">
+                    <img style="height:250px; " src="img/death_valley-wallpaper-1280x1024.jpg" alt="">
+                </div>
+                <div class="box">
+                    <img style="height:250px; " src="img/evening_in_london-wallpaper-1280x1024.jpg" alt="">
+                </div>
+                <div class="box">
+                    <img style="height:250px; " src="img/ford_shelby_hdr-wallpaper-1280x1024.jpg" alt="">
+                </div>
+            </div>
+        </div><br><br><br><br><br>
+
+        <div>
+            <div  class="image-grid1">
+               
+                <div>
+                    <img style="width:100%;height:200px" src="img/family.jpg" alt="">
+                </div>
+                <div>
+                    <img style="width:100%;height:200px" src="img/T-301768f55a912aaf90dd979ebb518292-arch-pixel-size-1-(97).png" alt="">
+                </div>
+    
+                <div style="position:relative" class="image-grid1-col-2 image-grid1-row-2" >
+                    <img style="height:420px; width: 100%; position: absolute;" src="img/lawyers-in-conference-room_1889707.jpg" alt="">
+                    <div style="position:absolute; padding: 220px 50px 0px 50px">
+                        <h3>FASHION</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse magnam magni ratione recusandae, debitis dolorem!</p>
+                        <p>Admin - August 25th 2023</p>
+                    </div>
+                    
+                </div>
+    
+                <div>
+                    <img style="width:100%;height:200px" src="img/how-to-make-your-husband-happy.jpg" alt="">
+                </div>
+                <div>
+                    <img style="width:100%;height:200px" src="img/Getting-Divorced-When-One-Spouse-Doesn’t-Want-to-Split-Up.jpeg" alt="">
+                </div>
+    
+                
+            </div>
+        </div> 
+    </section> 
+
+    
+
+    <script>
+        fetch('https://64105fcb864814e5b64f9a34.mockapi.io/credo/v1/news', {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json'
+            },
+        }).then(res => {
+            if (res.ok) {
+                return res.json();
+            }
+        }).then(data => {
+            // Do something with the list of news
+            console.log(data);
+            data.forEach(news => {
+                const markup = `
+            <div class="flex-column">
+                <img style="width: 100%;" src="${news.avatar}" alt="">
+                <h1 style="font-weight:bold">${news.title}</h1>
+                <p style="font-weight: bold;">Author: ${news.author}</p>
+                
+                <p style="font-size:14px; text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa culpa libero voluptatem provident...</p>
+                <br /><hr><br />
+                <div style="text-align: center;">
+                
+                    <button onclick="window.location.assign('singlenews.html?id=${news.id}')" class="btn">View</button> 
+                </div> <br /><br /><br /><br /><br /> 
+            </div> 
+            `;
+                document.getElementById('data').insertAdjacentHTML('beforeend', markup);
+            });
+
+
+
+
+
+        }).catch(error => {
+            // handle error
+            console.log(error);
+        })
+    </script>
     
 </body>
 </html>
